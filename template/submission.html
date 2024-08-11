@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+    .button 
+    {
+        border: none;
+        color: white;
+        padding: 20px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
+
+    .buttonS 
+    {
+        background-color: white; 
+        color: black; 
+        border: 3px solid blue;
+    }
+
+    .buttonS:hover 
+    {
+        background-color: blue;
+        color: white;
+    }
+    
+</style>
+<div class="row text-center">
+    <div class="col"></div>
+    <div class="col-6 text-center">
+        <div class="row">
+            <form method="POST" action="prediction" enctype="multipart/form-data">
+                <h1 style = "font-size: 150; text-align: center;">Please enter patient information:</h1>
+                <h2>
+                    <div></div>
+                    <p>Number of Pregnancies:</p>
+                    <input class="form-control" type="text" name="pregnancy_num" placeholder='Ex: 6'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+                   
+                    <p>Glucose Level:</p>
+                    <input type="number" step="any"  type="text" name="glucose_level" placeholder='Ex: 148.0'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+                   
+                    <p>Blood Pressure:</p>
+                    <input type="number" step="any"  type="text" name="blood_pressure" placeholder='Ex: 72.0'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+
+                    <p>Skin Thickness:</p>
+                    <input type="number" step="any"  type="text" name="skin_thickness" placeholder='Ex: 35.0'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+
+                    <p>Insulin Level:</p>
+                    <input type="number" step="any"  type="text" name="insulin_level" placeholder='Ex: 155.0'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+                  
+                    <p>BMI:</p>
+                    <input type="number" step="any"  type="text" name="BMI" placeholder='Ex: 33.6'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+                   
+                    <p>Diabetes Pedigree Function:</p>
+                    <input type="number" step="any"  type="text" name="DBF" placeholder='Ex: 0.627'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+                   
+                    <p>Age:</p>
+                    <input type="number" step="any"  type="text" name="age" placeholder='Ex: 50'  style= "width:40%; padding: 10px 10px; margin: 10px 4px;" required>
+                </h2>
+                <h3>
+                    <center>
+                        <button class="button buttonS" type="submit">Submit</button>
+                    </center>
+                </h3>
+            </form>
+        </div>
+    </div>
+    <div class="col"></div>
+</div>
+
+{% endblock content %}
